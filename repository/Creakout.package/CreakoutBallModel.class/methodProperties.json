@@ -1,0 +1,13 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"direction" : "",
+		"direction:" : "",
+		"initialize" : "",
+		"isInRect:" : "",
+		"position" : "",
+		"position:" : "",
+		"radius" : "",
+		"speed" : "",
+		"update:" : "" } }

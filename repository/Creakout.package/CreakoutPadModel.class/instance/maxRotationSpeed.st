@@ -1,0 +1,3 @@
+accessing
+maxRotationSpeed
+	^ 360

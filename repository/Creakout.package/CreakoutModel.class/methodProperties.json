@@ -1,0 +1,27 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"addBrickRadius:angle:life:" : "",
+		"ball" : "",
+		"boardCenter" : "",
+		"boardSize" : "",
+		"doBricks:" : "",
+		"handleBallCollideWithBricks" : "",
+		"handleBallCollidesWithPadAnd:" : "",
+		"handleBallOutAnd:" : "",
+		"handleBrickDead:" : "",
+		"ifDefeat:" : "",
+		"ifEnd:" : "",
+		"ifVictory:" : "",
+		"initialize" : "",
+		"level1" : "",
+		"level2" : "",
+		"levels" : "",
+		"lose" : "",
+		"pad" : "",
+		"restart" : "",
+		"shoot" : "",
+		"startAiming" : "",
+		"startNewLevel" : "",
+		"update:" : "" } }

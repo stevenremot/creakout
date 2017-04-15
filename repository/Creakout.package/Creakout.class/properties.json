@@ -1,0 +1,14 @@
+{
+	"category" : "Creakout",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "StevenRemot 4/6/2017 16:21",
+	"instvars" : [
+		 ],
+	"name" : "Creakout",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

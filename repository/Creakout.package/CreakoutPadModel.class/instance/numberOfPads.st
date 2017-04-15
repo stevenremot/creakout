@@ -1,0 +1,3 @@
+accessing
+numberOfPads
+	^ 3

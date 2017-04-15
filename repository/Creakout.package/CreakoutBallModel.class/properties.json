@@ -1,0 +1,15 @@
+{
+	"category" : "Creakout",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "StevenRemot 4/6/2017 17:10",
+	"instvars" : [
+		"position",
+		"direction" ],
+	"name" : "CreakoutBallModel",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

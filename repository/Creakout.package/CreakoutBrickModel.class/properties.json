@@ -1,0 +1,20 @@
+{
+	"category" : "Creakout",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "StevenRemot 4/7/2017 19:06",
+	"instvars" : [
+		"radius",
+		"thickness",
+		"origin",
+		"angle",
+		"width",
+		"color",
+		"bounceFactor" ],
+	"name" : "CreakoutBrickModel",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

@@ -1,0 +1,18 @@
+{
+	"class" : {
+		"defaultBounceFactor" : "",
+		"defaultThickness" : "",
+		"radius:origin:angle:life:" : "",
+		"radius:origin:angle:life:onDead:" : "",
+		"randomColor" : "" },
+	"instance" : {
+		"hit" : "",
+		"ifDead:" : "",
+		"initWidth" : "",
+		"life" : "",
+		"life:" : "",
+		"onDead:" : "",
+		"shrinkSpeed" : "",
+		"targetWidth" : "",
+		"update:" : "",
+		"widthByLife" : "" } }

@@ -1,0 +1,3 @@
+initialization
+restart
+	self initialize

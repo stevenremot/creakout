@@ -1,0 +1,27 @@
+{
+	"class" : {
+		"radius:thickness:origin:angle:width:color:bounceFactor:" : "" },
+	"instance" : {
+		"angle" : "",
+		"angle:" : "",
+		"bounceFactor" : "",
+		"bounceFactor:" : "",
+		"collisionVectorWith:" : "",
+		"color" : "",
+		"color:" : "",
+		"computeInnerBounceAngleWith:vector:" : "",
+		"computeOuterBounceAngleBetween:and:vector:" : "",
+		"innerPartCollidesWith:vector:" : "",
+		"leftAngle" : "",
+		"leftVector" : "",
+		"orbitCollidesWith:vector:" : "",
+		"origin" : "",
+		"origin:" : "",
+		"radius" : "",
+		"radius:" : "",
+		"rightAngle" : "",
+		"rightVector" : "",
+		"thickness" : "",
+		"thickness:" : "",
+		"width" : "",
+		"width:" : "" } }

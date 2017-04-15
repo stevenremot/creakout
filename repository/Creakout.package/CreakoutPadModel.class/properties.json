@@ -1,0 +1,16 @@
+{
+	"category" : "Creakout",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "StevenRemot 4/6/2017 13:54",
+	"instvars" : [
+		"pads",
+		"rotationDirection",
+		"center" ],
+	"name" : "CreakoutPadModel",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

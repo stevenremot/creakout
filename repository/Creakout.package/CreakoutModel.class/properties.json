@@ -1,0 +1,19 @@
+{
+	"category" : "Creakout",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "StevenRemot 4/6/2017 14:01",
+	"instvars" : [
+		"pad",
+		"ball",
+		"phase",
+		"bricks",
+		"currentLevel",
+		"lives" ],
+	"name" : "CreakoutModel",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
