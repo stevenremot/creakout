@@ -1,3 +1,4 @@
 accessing
 maxRotationSpeed
-	^ 360
+	"degrees / second"
+	^360

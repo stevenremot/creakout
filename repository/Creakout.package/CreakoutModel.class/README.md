@@ -1,0 +1,1 @@
+I gather all the data of a Creakout game.

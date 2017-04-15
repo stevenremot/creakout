@@ -1,3 +1,3 @@
 accessing
 backgroundColor
-	^ Color white
+	^Color white

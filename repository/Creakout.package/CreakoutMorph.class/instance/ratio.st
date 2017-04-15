@@ -1,3 +1,3 @@
 accessing
 ratio
-	^ (self extent x min: self extent y) / self boardSize
+	^(self extent x min: self extent y) / self boardSize

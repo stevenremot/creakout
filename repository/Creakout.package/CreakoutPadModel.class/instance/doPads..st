@@ -1,3 +1,3 @@
 iterating
-doPads: arg1
-	pads do: arg1
+doPads: aBlock
+	pads do: aBlock

@@ -1,7 +1,7 @@
 accessing
-aimingPositionFor: arg1
-	^ self center
+aimingPositionFor: aBall
+	^self center 
 		+
-			(Point
-				r: self radius - (self thickness / 2.0) - arg1 radius
-				degrees: (self centerAngleFor: 1))
+		(Point 
+			r: (self radius - (self thickness / 2.0) - aBall radius)
+			degrees: (self centerAngleFor: 1))

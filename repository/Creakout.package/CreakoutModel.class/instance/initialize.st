@@ -5,4 +5,4 @@ initialize
 	bricks := Set new.
 	lives := 3.
 	currentLevel := 0.
-	self startNewLevel
+	self startNewLevel.

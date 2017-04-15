@@ -1,3 +1,3 @@
 accessing
 padRadius
-	^ model pad radius
+	^model pad radius

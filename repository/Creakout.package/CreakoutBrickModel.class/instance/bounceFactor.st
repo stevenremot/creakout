@@ -1,3 +1,3 @@
 accessing
 bounceFactor
-	^ bounceFactor
+	^bounceFactor

@@ -1,11 +1,11 @@
 updating
-update: arg1
+update: milliseconds
 	self ifEnd: [ ^ self ].
-	pad update: arg1.
+	pad update: milliseconds.
 	phase = #aiming
 		ifTrue: [ ball position: (pad aimingPositionFor: ball) ]
-		ifFalse: [ ball update: arg1.
+		ifFalse: [ ball update: milliseconds.
 			self
-				handleBallOutAnd: [ self
-						handleBallCollidesWithPadAnd: [ self handleBallCollideWithBricks ] ] ].
-	self doBricks: [ :arg2 | arg2 update: arg1 ]
+				handleBallOutAnd: [ self handleBallCollidesWithPadAnd: [ self handleBallCollideWithBricks ] ] ].
+	self doBricks: [ :brick | brick update: milliseconds ]
+	

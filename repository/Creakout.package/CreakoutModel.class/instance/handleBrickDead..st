@@ -1,7 +1,4 @@
 game phases
-handleBrickDead: arg1
-	| tmp2 |
-	tmp2 := bricks.
-	tmp2
-		remove: arg1;
+handleBrickDead: aBrick
+	bricks remove: aBrick;
 		ifEmpty: [ self startNewLevel ]

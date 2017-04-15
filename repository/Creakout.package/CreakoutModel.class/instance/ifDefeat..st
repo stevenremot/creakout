@@ -1,4 +1,3 @@
 accessing
-ifDefeat: arg1
-	phase = #defeat
-		ifTrue: arg1
+ifDefeat: aBlock
+	(phase = #defeat) ifTrue: aBlock

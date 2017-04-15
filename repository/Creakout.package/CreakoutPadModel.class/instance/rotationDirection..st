@@ -1,3 +1,3 @@
 accessing
-rotationDirection: arg1
-	rotationDirection := arg1 min: 1 max: -1
+rotationDirection: aDirection
+	rotationDirection := aDirection min: 1 max: -1

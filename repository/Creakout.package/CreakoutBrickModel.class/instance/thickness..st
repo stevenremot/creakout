@@ -1,3 +1,3 @@
 accessing
-thickness: arg1
-	thickness := arg1
+thickness: aNumber
+	thickness := aNumber

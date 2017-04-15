@@ -1,11 +1,11 @@
 updating
 handleBallCollideWithBricks
-	| tmp2 |
+	| bounceVector |
 	self
-		doBricks: [ :arg1 | 
-			tmp2 := arg1 collisionVectorWith: ball.
-			tmp2
-				ifNotNil: [ ball
-						direction: ball direction - (2 * tmp2 * (ball direction dotProduct: tmp2)).
-					arg1 hit.
+		doBricks: [ :brick | 
+			bounceVector := brick collisionVectorWith: ball.
+			bounceVector
+				ifNotNil: [ 
+					ball direction: (ball direction - (2 * bounceVector * (ball direction dotProduct: bounceVector))).
+					brick hit.
 					^ self ] ]

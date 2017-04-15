@@ -1,9 +1,17 @@
 private - collision
-orbitCollidesWith: arg1 vector: arg2
-	| tmp1 tmp2 tmp3 |
-	tmp1 := arg2 r.
-	tmp2 := (arg2 dotProduct: arg1 direction) < 0.
-	((tmp1 < radius and: tmp2) or: [ tmp1 > radius and: tmp2 not ])
+orbitCollidesWith: aBall vector: aBallVector
+	"Check is the ball is in the pad orbit, and in a direction the allows collision"
+	| ballRadius isNavigatingInside offset |
+	ballRadius := aBallVector r.
+	isNavigatingInside := (aBallVector dotProduct: aBall direction) < 0.
+	
+	(((ballRadius < radius) and: isNavigatingInside)
+		or: [ (ballRadius > radius) and: isNavigatingInside not ])
 		ifTrue: [ ^ false ].
-	tmp3 := arg1 radius + (self thickness / 2.0).
-	^ tmp1 - radius between: tmp3 negated and: tmp3
+		
+	offset := aBall radius + (self thickness / 2.0).
+	
+	^((ballRadius - radius)
+		between: offset negated
+		and: offset).
+	

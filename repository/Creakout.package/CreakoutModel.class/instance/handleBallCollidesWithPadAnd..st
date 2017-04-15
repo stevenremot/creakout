@@ -1,8 +1,8 @@
 updating
-handleBallCollidesWithPadAnd: arg1
-	| tmp1 |
-	tmp1 := pad collidesWithBall: ball.
-	tmp1
-		ifNotNil: [ ball direction: tmp1.
+handleBallCollidesWithPadAnd: aBlock
+	| bounceVector |
+	bounceVector := pad collidesWithBall: ball.
+	bounceVector
+		ifNotNil: [ ball direction: bounceVector.
 			^ self ].
-	arg1 value
+	aBlock value

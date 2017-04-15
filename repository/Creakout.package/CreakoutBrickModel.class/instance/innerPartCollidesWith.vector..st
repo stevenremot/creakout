@@ -1,4 +1,6 @@
 private - collision
-innerPartCollidesWith: arg1 vector: arg2
-	^ (self leftVector normal dotProduct: arg2) > 0
-		and: [ (self rightVector normal dotProduct: arg2) < 0 ]
+innerPartCollidesWith: aBall vector: aBallVector
+	"Assume the ball is in the pad orbit, and check whether the ball collides with the ""inner"" part
+	of the pad (inner part = pad without the circles)"
+	^ (self leftVector normal dotProduct: aBallVector) > 0
+		and: [ (self rightVector normal dotProduct: aBallVector) < 0 ]

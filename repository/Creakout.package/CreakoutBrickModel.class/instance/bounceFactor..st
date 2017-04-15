@@ -1,3 +1,3 @@
 accessing
-bounceFactor: arg1
-	bounceFactor := arg1
+bounceFactor: aNumber
+	bounceFactor := aNumber

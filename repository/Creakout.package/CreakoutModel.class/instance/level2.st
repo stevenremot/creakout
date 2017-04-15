@@ -1,9 +1,7 @@
 levels
 level2
-	| tmp2 |
 	bricks removeAll.
-	tmp2 := self.
-	tmp2
+	self
 		addBrickRadius: 25.0 angle: 0 life: 4;
 		addBrickRadius: 25.0 angle: 120 life: 4;
 		addBrickRadius: 25.0 angle: 240 life: 4;

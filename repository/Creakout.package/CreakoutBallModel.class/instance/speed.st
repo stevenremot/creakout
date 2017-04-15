@@ -1,3 +1,4 @@
 accessing
 speed
-	^ 70
+	"pixels / second"
+	^70

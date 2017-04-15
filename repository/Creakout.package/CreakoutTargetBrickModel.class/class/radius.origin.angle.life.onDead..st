@@ -1,14 +1,12 @@
 instance creation
-radius: arg1 origin: arg2 angle: arg3 life: arg4 onDead: arg5
-	| tmp2 |
-	tmp2 := self new.
-	tmp2
-		radius: arg1;
+radius: aRadius origin: aPoint angle: anAngle life: aLife onDead: aBlock
+	^ self new
+		radius: aRadius;
 		thickness: self defaultThickness;
-		origin: arg2;
-		angle: arg3;
+		origin: aPoint;
+		angle: anAngle;
 		color: self randomColor;
 		bounceFactor: self defaultBounceFactor;
-		life: arg4;
-		onDead: arg5.
-	^ tmp2 initWidth
+		life: aLife;
+		onDead: aBlock;
+		initWidth.

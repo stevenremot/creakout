@@ -1,3 +1,3 @@
 accessing
 boardSize
-	^ 100
+	^100

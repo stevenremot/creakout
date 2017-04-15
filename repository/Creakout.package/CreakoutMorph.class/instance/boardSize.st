@@ -1,3 +1,3 @@
 accessing
 boardSize
-	^ model boardSize
+	^model boardSize

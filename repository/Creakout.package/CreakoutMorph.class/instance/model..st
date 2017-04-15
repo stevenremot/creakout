@@ -1,3 +1,4 @@
 accessing
-model: arg1
-	model := arg1
+model: aModel
+	model := aModel
+	

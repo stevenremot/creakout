@@ -1,23 +1,19 @@
 drawing
 render
 	surface
-		drawDuring: [ :arg1 | 
-			| tmp2 tmp4 tmp6 |
+		drawDuring: [ :canvas | 
 			surface clear.
-			arg1 pathTransform loadIdentity.
-			tmp2 := arg1.
-			tmp2
+			canvas pathTransform loadIdentity.
+			canvas
 				setPaint: self backgroundColor;
 				drawShape: (0 @ 0 corner: self extent).
-			arg1 pathTransform scaleBy: self ratio.
-			tmp4 := model.
-			tmp4
-				ifVictory: [ self drawVictoryScreenOn: arg1.
+			canvas pathTransform scaleBy: self ratio.
+			model
+				ifVictory: [ self drawVictoryScreenOn: canvas.
 					^ self ];
-				ifDefeat: [ self drawDefeatScreenOn: arg1.
+				ifDefeat: [ self drawDefeatScreenOn: canvas.
 					^ self ].
-			tmp6 := self.
-			tmp6
-				drawPadsOn: arg1;
-				drawBallOn: arg1;
-				drawBricksOn: arg1 ]
+			self
+				drawPadsOn: canvas;
+				drawBallOn: canvas;
+				drawBricksOn: canvas ]

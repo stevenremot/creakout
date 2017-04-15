@@ -2,12 +2,12 @@
 	"class" : {
 		 },
 	"instance" : {
-		"direction" : "",
-		"direction:" : "",
-		"initialize" : "",
-		"isInRect:" : "",
-		"position" : "",
-		"position:" : "",
-		"radius" : "",
-		"speed" : "",
-		"update:" : "" } }
+		"direction" : "StevenRemot 4/6/2017 17:11",
+		"direction:" : "StevenRemot 4/6/2017 17:14",
+		"initialize" : "StevenRemot 4/6/2017 17:10",
+		"isInRect:" : "StevenRemot 4/6/2017 17:29",
+		"position" : "StevenRemot 4/6/2017 17:11",
+		"position:" : "StevenRemot 4/6/2017 17:11",
+		"radius" : "StevenRemot 4/8/2017 14:25",
+		"speed" : "StevenRemot 4/8/2017 15:04",
+		"update:" : "StevenRemot 4/6/2017 17:15" } }

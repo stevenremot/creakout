@@ -1,4 +1,5 @@
 drawing
-drawOn: arg1
+drawOn: aCanvas
 	self render.
-	arg1 drawImage: surface asForm at: self bounds origin
+	
+	aCanvas drawImage: surface asForm at: self bounds origin

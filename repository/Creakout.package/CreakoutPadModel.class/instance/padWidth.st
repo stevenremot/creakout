@@ -1,3 +1,3 @@
 accessing
 padWidth
-	^ 20.0
+	^20.0

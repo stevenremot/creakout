@@ -1,3 +1,3 @@
 accessing
 direction
-	^ direction
+	^direction

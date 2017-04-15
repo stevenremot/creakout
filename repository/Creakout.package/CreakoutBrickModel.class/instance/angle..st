@@ -1,3 +1,3 @@
 accessing
-angle: arg1
-	angle := arg1
+angle: aNumber
+	angle := aNumber

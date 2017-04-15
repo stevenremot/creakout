@@ -1,3 +1,3 @@
 accessing
 center
-	^ center
+	^center

@@ -1,3 +1,3 @@
 accessing
 rotationDirection
-	^ rotationDirection
+	^rotationDirection

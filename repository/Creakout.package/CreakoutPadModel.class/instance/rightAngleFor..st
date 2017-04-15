@@ -1,3 +1,3 @@
 accessing
-rightAngleFor: arg1
-	^ (self centerAngleFor: arg1) + (self padWidth / 2.0)
+rightAngleFor: aPad
+	^(self centerAngleFor: aPad) + (self padWidth / 2.0)

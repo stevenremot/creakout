@@ -1,3 +1,3 @@
 accessing
-center: arg1
-	center := arg1
+center: aPoint
+	center := aPoint

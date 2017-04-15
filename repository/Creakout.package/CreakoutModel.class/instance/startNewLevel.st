@@ -4,6 +4,5 @@ startNewLevel
 	currentLevel > self levels size
 		ifTrue: [ phase := #victory.
 			^ self ].
-	self
-		perform: (self levels at: currentLevel);
-		startAiming
+	self perform: (self levels at: currentLevel).
+	self startAiming

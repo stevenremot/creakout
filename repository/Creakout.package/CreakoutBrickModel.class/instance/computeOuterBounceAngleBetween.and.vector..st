@@ -1,3 +1,5 @@
 private - collision
-computeOuterBounceAngleBetween: arg1 and: arg2 vector: arg3
-	^ (arg3 - arg1) normalized
+computeOuterBounceAngleBetween: aCenter and: aBall vector: aBallVector
+	"Assume there is a collision with the ball in the outer part, and compute the new direction of the ball
+	after bounce"
+	^ (aBallVector - aCenter) normalized

@@ -1,3 +1,3 @@
 accessing
-width: arg1
-	width := arg1
+width: aNumber
+	width := aNumber

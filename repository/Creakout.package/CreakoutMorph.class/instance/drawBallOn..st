@@ -1,18 +1,13 @@
 drawing
-drawBallOn: arg1
-	| tmp1 tmp2 tmp4 |
-	tmp1 := model ball position - (model ball radius @ 0).
-	tmp2 := model ball position + (model ball radius @ 0).
-	tmp4 := arg1.
-	tmp4
-		setPaint: self ballColor;
-		drawShape:
-			(arg1
-				createPath: [ :arg2 | 
-					| tmp6 |
-					tmp6 := arg2.
-					tmp6
-						absolute;
-						moveTo: tmp1;
-						cwArcTo: tmp2 angle: Float pi;
-						cwArcTo: tmp1 angle: Float pi ])
+drawBallOn: aCanvas
+	| left right |
+	left := model ball position - ((model ball radius)@0).
+	right := model ball position + ((model ball radius)@0).
+	
+	aCanvas setPaint: self ballColor;
+		drawShape: (aCanvas createPath: [ :builder |
+			builder
+				absolute;
+				moveTo: left;
+				cwArcTo: right angle: Float pi;
+				cwArcTo: left angle: Float pi])

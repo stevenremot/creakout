@@ -1,3 +1,3 @@
 drawing
-drawBricksOn: arg1
-	model doBricks: [ :arg2 | self drawBrick: arg2 on: arg1 ]
+drawBricksOn: aCanvas
+	model doBricks: [ :brick | self drawBrick: brick on: aCanvas ].

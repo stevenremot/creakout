@@ -1,3 +1,3 @@
 accessing
 thickness
-	^ thickness
+	^thickness

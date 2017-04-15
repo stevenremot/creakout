@@ -1,3 +1,3 @@
 accessing
-onDead: arg1
-	deadBlock := arg1
+onDead: aBlock
+	deadBlock := aBlock

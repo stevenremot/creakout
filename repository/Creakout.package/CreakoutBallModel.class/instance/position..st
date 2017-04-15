@@ -1,3 +1,3 @@
 accessing
-position: arg1
-	position := arg1
+position: aPoint
+	position := aPoint

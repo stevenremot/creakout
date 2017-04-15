@@ -1,3 +1,3 @@
 accessing
 padThickness
-	^ model pad thickness
+	^model pad thickness

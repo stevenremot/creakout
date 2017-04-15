@@ -1,3 +1,3 @@
 accessing
-rotate: arg1
-	pads do: [ :arg2 | arg2 angle: arg2 angle + arg1 ]
+rotate: aNumber
+	pads do: [  :pad | pad angle: pad angle + aNumber ]

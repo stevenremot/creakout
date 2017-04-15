@@ -1,3 +1,3 @@
 accessing
 numberOfPads
-	^ 3
+	^3

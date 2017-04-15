@@ -1,5 +1,5 @@
 accessing
-rightVectorFor: arg1
-	| tmp1 |
-	tmp1 := (self rightAngleFor: arg1) degreesToRadians.
-	^ tmp1 cos @ tmp1 sin
+rightVectorFor: aPad
+	| angle |
+	angle := (self rightAngleFor: aPad) degreesToRadians.
+	^(angle cos)@(angle sin)

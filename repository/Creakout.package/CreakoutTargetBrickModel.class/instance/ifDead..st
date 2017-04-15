@@ -1,4 +1,3 @@
 damage handling
-ifDead: arg1
-	self life = 0
-		ifTrue: arg1
+ifDead: aBlock
+	(self life = 0) ifTrue: aBlock

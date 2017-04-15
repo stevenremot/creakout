@@ -1,3 +1,3 @@
 event handling
-handlesMouseDown: arg1
-	^ true
+handlesMouseDown: anEvent
+	^true

@@ -1,4 +1,3 @@
 accessing
-ifVictory: arg1
-	phase = #victory
-		ifTrue: arg1
+ifVictory: aBlock
+	(phase = #victory) ifTrue: aBlock

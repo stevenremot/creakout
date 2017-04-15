@@ -1,8 +1,12 @@
 private - collision
-computeInnerBounceAngleWith: arg1 vector: arg2
-	| tmp1 tmp2 |
-	tmp2 := arg2 angle - angle degreesToRadians.
-	tmp1 := arg2 angle - (tmp2 * bounceFactor).
-	(arg2 dotProduct: arg1 direction) > 0
-		ifTrue: [ tmp1 := tmp1 + Float pi ].
-	^ tmp1 cos @ tmp1 sin
+computeInnerBounceAngleWith: aBall vector: aBallVector
+	"Assume there is a collision with the ball in the inner part, and compute the new direction of the ball
+	after bounce"
+
+	| bounceAngle bounceOffset |
+	bounceOffset := (aBallVector angle - angle degreesToRadians).
+		
+	bounceAngle := aBallVector angle - (bounceOffset * bounceFactor).
+	(aBallVector dotProduct: aBall direction) > 0
+		ifTrue: [ bounceAngle := bounceAngle + Float pi ].
+	^ bounceAngle cos @ bounceAngle sin
