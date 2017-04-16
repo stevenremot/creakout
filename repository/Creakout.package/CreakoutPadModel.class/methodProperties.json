@@ -11,7 +11,7 @@
 		"collidesWithBall:" : "StevenRemot 4/7/2017 19:51",
 		"doPads:" : "StevenRemot 4/7/2017 19:33",
 		"initPads" : "StevenRemot 4/8/2017 14:24",
-		"initialize" : "StevenRemot 4/7/2017 19:47",
+		"initialize" : "StevenRemot 4/16/2017 13:57",
 		"leftAngleFor:" : "StevenRemot 4/6/2017 17:55",
 		"leftVectorFor:" : "StevenRemot 4/6/2017 18:20",
 		"maxRotationSpeed" : "StevenRemot 4/6/2017 15:29",
@@ -26,6 +26,7 @@
 		"rotation" : "",
 		"rotation:" : "StevenRemot 4/7/2017 19:30",
 		"rotationDirection" : "StevenRemot 4/6/2017 15:41",
-		"rotationDirection:" : "StevenRemot 4/6/2017 15:49",
+		"rotationDirection:" : "StevenRemot 4/16/2017 13:55",
 		"thickness" : "StevenRemot 4/8/2017 14:25",
-		"update:" : "StevenRemot 4/7/2017 19:31" } }
+		"update:" : "StevenRemot 4/16/2017 13:59",
+		"updateRotationSpeed:" : "StevenRemot 4/16/2017 14:14" } }

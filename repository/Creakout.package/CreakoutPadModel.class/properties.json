@@ -8,7 +8,8 @@
 	"instvars" : [
 		"pads",
 		"rotationDirection",
-		"center" ],
+		"center",
+		"rotationSpeed" ],
 	"name" : "CreakoutPadModel",
 	"pools" : [
 		 ],
