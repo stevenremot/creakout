@@ -21,7 +21,7 @@ Clone this repository.
 In monticello, add the folder `repository` as a filetree
 repository. You can then import the source in your image.
 
-Run the game by doing `Creakout start`
+Run the game by doing `CreakoutMorphic start`
 
 ## Commands
 
