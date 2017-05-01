@@ -33,6 +33,8 @@ module.exports = function (grunt) {
             },
             all: {
                 src: [
+		    'src/Creakout-Compat.st',
+		    'src/Creakout.st',
                     'src/CreakoutWeb.st', // list all sources in dependency order
                     'src/CreakoutWeb-Tests.st' // list all tests in dependency order
                 ],

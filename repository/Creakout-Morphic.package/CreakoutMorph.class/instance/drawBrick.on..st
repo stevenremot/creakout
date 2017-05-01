@@ -20,8 +20,8 @@ drawBrick: aBrick on: aCanvas
 			builder
 				absolute;
 				moveTo: left * minRad;
-				cwArcTo: left * maxRad angle: Float pi;
+				cwArcTo: left * maxRad angle: CreakoutMath pi;
 				cwArcTo: right * maxRad angle: width;
-				cwArcTo: right * minRad angle: Float pi;
+				cwArcTo: right * minRad angle: CreakoutMath pi;
 				ccwArcTo: left * minRad angle: width.
 			])]

@@ -9,5 +9,5 @@ drawBallOn: aCanvas
 			builder
 				absolute;
 				moveTo: left;
-				cwArcTo: right angle: Float pi;
-				cwArcTo: left angle: Float pi])
+				cwArcTo: right angle: CreakoutMath pi;
+				cwArcTo: left angle: CreakoutMath pi])

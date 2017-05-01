@@ -441,7 +441,7 @@ $ctx1.sendIdx["-"]=1;
 bounceAngle=$recv($recv(aBallVector)._angle()).__minus($recv(bounceOffset).__star($self["@bounceFactor"]));
 $2=$recv($recv(aBallVector)._dotProduct_($recv(aBall)._direction())).__gt((0));
 if($core.assert($2)){
-bounceAngle=$recv(bounceAngle).__plus($recv($globals.Float)._pi());
+bounceAngle=$recv(bounceAngle).__plus($recv($globals.CreakoutMath)._pi());
 bounceAngle;
 }
 return $recv($recv(bounceAngle)._cos()).__at($recv(bounceAngle)._sin());
@@ -451,8 +451,8 @@ return $recv($recv(bounceAngle)._cos()).__at($recv(bounceAngle)._sin());
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aBall", "aBallVector"],
-source: "computeInnerBounceAngleWith: aBall vector: aBallVector\x0a\x09\x22Assume there is a collision with the ball in the inner part, and compute the new direction of the ball\x0a\x09after bounce\x22\x0a\x0a\x09| bounceAngle bounceOffset |\x0a\x09bounceOffset := (aBallVector angle - angle degreesToRadians).\x0a\x09\x09\x0a\x09bounceAngle := aBallVector angle - (bounceOffset * bounceFactor).\x0a\x09(aBallVector dotProduct: aBall direction) > 0\x0a\x09\x09ifTrue: [ bounceAngle := bounceAngle + Float pi ].\x0a\x09^ bounceAngle cos @ bounceAngle sin",
-referencedClasses: ["Float"],
+source: "computeInnerBounceAngleWith: aBall vector: aBallVector\x0a\x09\x22Assume there is a collision with the ball in the inner part, and compute the new direction of the ball\x0a\x09after bounce\x22\x0a\x0a\x09| bounceAngle bounceOffset |\x0a\x09bounceOffset := (aBallVector angle - angle degreesToRadians).\x0a\x09\x09\x0a\x09bounceAngle := aBallVector angle - (bounceOffset * bounceFactor).\x0a\x09(aBallVector dotProduct: aBall direction) > 0\x0a\x09\x09ifTrue: [ bounceAngle := bounceAngle + CreakoutMath pi ].\x0a\x09^ bounceAngle cos @ bounceAngle sin",
+referencedClasses: ["CreakoutMath"],
 //>>excludeEnd("ide");
 messageSends: ["-", "angle", "degreesToRadians", "*", "ifTrue:", ">", "dotProduct:", "direction", "+", "pi", "@", "cos", "sin"]
 }),
@@ -1365,7 +1365,7 @@ $4=$recv($self["@ball"])._direction();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["direction"]=1;
 //>>excludeEnd("ctx");
-$5=$recv((2).__star(bounceVector)).__star($recv($recv($self["@ball"])._direction())._dotProduct_(bounceVector));
+$5=$recv($recv(bounceVector).__star((2))).__star($recv($recv($self["@ball"])._direction())._dotProduct_(bounceVector));
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx2.sendIdx["*"]=1;
 //>>excludeEnd("ctx");
@@ -1387,7 +1387,7 @@ catch(e) {if(e===$early)return e[0]; throw e}
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "handleBallCollideWithBricks\x0a\x09| bounceVector |\x0a\x09self\x0a\x09\x09doBricks: [ :brick | \x0a\x09\x09\x09bounceVector := brick collisionVectorWith: ball.\x0a\x09\x09\x09bounceVector\x0a\x09\x09\x09\x09ifNotNil: [ \x0a\x09\x09\x09\x09\x09ball direction: (ball direction - (2 * bounceVector * (ball direction dotProduct: bounceVector))).\x0a\x09\x09\x09\x09\x09brick hit.\x0a\x09\x09\x09\x09\x09^ self ] ]",
+source: "handleBallCollideWithBricks\x0a\x09| bounceVector |\x0a\x09self\x0a\x09\x09doBricks: [ :brick | \x0a\x09\x09\x09bounceVector := brick collisionVectorWith: ball.\x0a\x09\x09\x09bounceVector\x0a\x09\x09\x09\x09ifNotNil: [ ball\x0a\x09\x09\x09\x09\x09\x09direction: ball direction - (bounceVector * 2 * (ball direction dotProduct: bounceVector)).\x0a\x09\x09\x09\x09\x09brick hit.\x0a\x09\x09\x09\x09\x09^ self ] ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["doBricks:", "collisionVectorWith:", "ifNotNil:", "direction:", "-", "direction", "*", "dotProduct:", "hit"]

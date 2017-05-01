@@ -10,7 +10,7 @@ drawPadsOn: aCanvas
 	aCanvas drawShape: (aCanvas createPath: [ :builder | 
 			builder 
 				moveTo: x@y;
-				cwArcTo: (2 * self padRadius)@0 angle: Float pi;
-				cwArcTo: (-2 * self padRadius)@0 angle: Float pi.]).
+				cwArcTo: (2 * self padRadius)@0 angle: CreakoutMath pi;
+				cwArcTo: (-2 * self padRadius)@0 angle: CreakoutMath pi.]).
 	
 	model pad doPads: [ :pad | self drawBrick: pad on: aCanvas ]

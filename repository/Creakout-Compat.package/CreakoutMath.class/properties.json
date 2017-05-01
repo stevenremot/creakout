@@ -1,0 +1,14 @@
+{
+	"category" : "Creakout-Compat",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "StevenRemot 5/1/2017 16:38",
+	"instvars" : [
+		 ],
+	"name" : "CreakoutMath",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

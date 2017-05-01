@@ -8,5 +8,5 @@ computeInnerBounceAngleWith: aBall vector: aBallVector
 		
 	bounceAngle := aBallVector angle - (bounceOffset * bounceFactor).
 	(aBallVector dotProduct: aBall direction) > 0
-		ifTrue: [ bounceAngle := bounceAngle + Float pi ].
+		ifTrue: [ bounceAngle := bounceAngle + CreakoutMath pi ].
 	^ bounceAngle cos @ bounceAngle sin
