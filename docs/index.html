@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Creakout</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Steven Rémot" />
+    <script type='text/javascript' src='the.js'></script>
+    <style>
+      .screen {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+
+        opacity: 0.5;
+      }
+
+      .screen.visible {
+        display: flex;
+      }
+
+      .screen p {
+        color: white;
+        font-family: Helvetica;
+        font-size: 3rem;
+      }
+
+      #success-screen {
+        background-color: green;
+      }
+
+      #failure-screen {
+        background-color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+  <div id="success-screen" class="screen"><p>You won</p></div>
+  <div id="failure-screen" class="screen"><p>You lost</p></div>
+  <script type='text/javascript'>
+      require(['app'], function (amber) {
+          amber.initialize({
+            //used for all new packages in IDE
+            'transport.defaultAmdNamespace': "amber-creakout"
+          }).then(function () {
+              amber.globals.CreakoutWeb._start();
+          });
+      });
+  </script>
+  </body>
+
+</html>
