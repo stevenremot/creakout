@@ -1,3 +1,3 @@
 game phases
 lose
-	phase := #defeat
+	self phase: #defeat

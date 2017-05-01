@@ -16,6 +16,124 @@ $core.packages["CreakoutWeb"].innerEval = function (expr) { return eval(expr); }
 $core.packages["CreakoutWeb"].imports = ["amber/jquery/Wrappers-JQuery", "amber/web/Web", "silk/Silk"];
 $core.packages["CreakoutWeb"].transport = {"type":"amd","amdNamespace":"amber-creakout"};
 
+$core.addClass("CreakoutScreen", $globals.Object, [], "CreakoutWeb");
+
+$core.addMethod(
+$core.method({
+selector: "handlePhase:",
+protocol: "screen handling",
+fn: function(aPhase){
+var self=this,$self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+var $1,$2;
+$1=$recv(aPhase).__eq("victory");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["="]=1;
+//>>excludeEnd("ctx");
+if($core.assert($1)){
+return $self._showSuccess();
+}
+$2=$recv(aPhase).__eq("defeat");
+if($core.assert($2)){
+return $self._showFailure();
+}
+return $self._hide();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"handlePhase:",{aPhase:aPhase},$globals.CreakoutScreen.a$cls)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["aPhase"],
+source: "handlePhase: aPhase\x0a\x09aPhase = #victory\x0a\x09\x09ifTrue: [ ^ self showSuccess ].\x0a\x09\x09\x0a\x09aPhase = #defeat\x0a\x09\x09ifTrue: [ ^ self showFailure ].\x0a\x09\x0a\x09^ self hide",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["ifTrue:", "=", "showSuccess", "showFailure", "hide"]
+}),
+$globals.CreakoutScreen.a$cls);
+
+$core.addMethod(
+$core.method({
+selector: "hide",
+protocol: "screen handling",
+fn: function(){
+var self=this,$self=this;
+var visibleScreen;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+var $1,$receiver;
+visibleScreen=$recv(document)._querySelector_(".screen.visible");
+$1=visibleScreen;
+if(($receiver = $1) == null || $receiver.a$nil){
+$1;
+} else {
+$recv($recv(visibleScreen)._classList())._remove_("visible");
+}
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"hide",{visibleScreen:visibleScreen},$globals.CreakoutScreen.a$cls)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "hide\x0a\x09| visibleScreen |\x0a\x09visibleScreen := (document querySelector: '.screen.visible').\x0a\x09visibleScreen ifNotNil: [ visibleScreen classList remove: 'visible' ]",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["querySelector:", "ifNotNil:", "remove:", "classList"]
+}),
+$globals.CreakoutScreen.a$cls);
+
+$core.addMethod(
+$core.method({
+selector: "showFailure",
+protocol: "screen handling",
+fn: function(){
+var self=this,$self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+$recv($recv($recv(document)._getElementById_("failure-screen"))._classList())._add_("visible");
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"showFailure",{},$globals.CreakoutScreen.a$cls)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "showFailure\x0a\x09(document getElementById: 'failure-screen') classList add: 'visible'",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["add:", "classList", "getElementById:"]
+}),
+$globals.CreakoutScreen.a$cls);
+
+$core.addMethod(
+$core.method({
+selector: "showSuccess",
+protocol: "screen handling",
+fn: function(){
+var self=this,$self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+$recv($recv($recv(document)._getElementById_("success-screen"))._classList())._add_("visible");
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"showSuccess",{},$globals.CreakoutScreen.a$cls)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "showSuccess\x0a\x09(document getElementById: 'success-screen') classList add: 'visible'",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["add:", "classList", "getElementById:"]
+}),
+$globals.CreakoutScreen.a$cls);
+
+
 $core.addClass("CreakoutWeb", $globals.Object, [], "CreakoutWeb");
 //>>excludeStart("ide", pragmas.excludeIdeData);
 $globals.CreakoutWeb.comment="Main entry point for the creakout web code";
@@ -106,13 +224,22 @@ return $recv(model)._update_(millis);
 }));
 $recv($9)._frequency_((1000).__slash((120)));
 $recv($9)._start();
+$recv(model)._onPhaseChangeDo_((function(phase){
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx2) {
+//>>excludeEnd("ctx");
+return $recv($globals.CreakoutScreen)._handlePhase_(phase);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx2) {$ctx2.fillBlock({phase:phase},$ctx1,3)});
+//>>excludeEnd("ctx");
+}));
 $recv(window)._addEventListener_block_("resize",(function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
 return $recv(canvas)._width_height_($recv(window)._innerWidth(),$recv(window)._innerHeight());
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
-}, function($ctx2) {$ctx2.fillBlock({},$ctx1,3)});
+}, function($ctx2) {$ctx2.fillBlock({},$ctx1,4)});
 //>>excludeEnd("ctx");
 }));
 return self;
@@ -122,10 +249,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "start\x0a\x09| model canvas |\x0a\x09model := CreakoutModel new.\x0a\x09\x0a\x09canvas := CreakoutWebCanvas new\x0a\x09\x09model: model;\x0a\x09\x09width: window innerWidth\x0a\x09\x09height: window innerHeight;\x0a\x09\x09attachTo: document body.\x0a\x09\x09\x0a\x09CreakoutWebKeyboardHandler new\x0a\x09\x09model: model;\x0a\x09\x09start.\x0a\x09\x09\x0a\x09CreakoutWebLoop new\x0a\x09\x09block: [ canvas render ];\x0a\x09\x09frequency: 1000 / 60;\x0a\x09\x09start.\x0a\x09\x09\x0a\x09CreakoutWebLoop new\x0a\x09\x09block: [ :millis | model update: millis ];\x0a\x09\x09frequency: 1000 / 120;\x0a\x09\x09start.\x0a\x09\x09\x0a\x09window addEventListener: 'resize' block: [\x0a\x09\x09canvas width: window innerWidth\x0a\x09\x09\x09   height: window innerHeight\x0a    ].",
-referencedClasses: ["CreakoutModel", "CreakoutWebCanvas", "CreakoutWebKeyboardHandler", "CreakoutWebLoop"],
+source: "start\x0a\x09| model canvas |\x0a\x09model := CreakoutModel new.\x0a\x09\x0a\x09canvas := CreakoutWebCanvas new\x0a\x09\x09model: model;\x0a\x09\x09width: window innerWidth\x0a\x09\x09height: window innerHeight;\x0a\x09\x09attachTo: document body.\x0a\x09\x09\x0a\x09CreakoutWebKeyboardHandler new\x0a\x09\x09model: model;\x0a\x09\x09start.\x0a\x09\x09\x0a\x09CreakoutWebLoop new\x0a\x09\x09block: [ canvas render ];\x0a\x09\x09frequency: 1000 / 60;\x0a\x09\x09start.\x0a\x09\x09\x0a\x09CreakoutWebLoop new\x0a\x09\x09block: [ :millis | model update: millis ];\x0a\x09\x09frequency: 1000 / 120;\x0a\x09\x09start.\x0a\x09\x09\x0a\x09model onPhaseChangeDo: [ :phase | CreakoutScreen handlePhase: phase ].\x0a\x09\x09\x0a\x09window addEventListener: 'resize' block: [\x0a\x09\x09canvas width: window innerWidth\x0a\x09\x09\x09   height: window innerHeight\x0a    ].",
+referencedClasses: ["CreakoutModel", "CreakoutWebCanvas", "CreakoutWebKeyboardHandler", "CreakoutWebLoop", "CreakoutScreen"],
 //>>excludeEnd("ide");
-messageSends: ["new", "model:", "width:height:", "innerWidth", "innerHeight", "attachTo:", "body", "start", "block:", "render", "frequency:", "/", "update:", "addEventListener:block:"]
+messageSends: ["new", "model:", "width:height:", "innerWidth", "innerHeight", "attachTo:", "body", "start", "block:", "render", "frequency:", "/", "update:", "onPhaseChangeDo:", "handlePhase:", "addEventListener:block:"]
 }),
 $globals.CreakoutWeb.a$cls);
 

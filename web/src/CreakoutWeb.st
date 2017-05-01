@@ -1,5 +1,35 @@
 Smalltalk createPackage: 'CreakoutWeb'!
 (Smalltalk packageAt: 'CreakoutWeb') imports: {'amber/jquery/Wrappers-JQuery'. 'amber/web/Web'. 'silk/Silk'}!
+Object subclass: #CreakoutScreen
+	instanceVariableNames: ''
+	package: 'CreakoutWeb'!
+
+!CreakoutScreen class methodsFor: 'screen handling'!
+
+handlePhase: aPhase
+	aPhase = #victory
+		ifTrue: [ ^ self showSuccess ].
+		
+	aPhase = #defeat
+		ifTrue: [ ^ self showFailure ].
+	
+	^ self hide
+!
+
+hide
+	| visibleScreen |
+	visibleScreen := (document querySelector: '.screen.visible').
+	visibleScreen ifNotNil: [ visibleScreen classList remove: 'visible' ]
+!
+
+showFailure
+	(document getElementById: 'failure-screen') classList add: 'visible'
+!
+
+showSuccess
+	(document getElementById: 'success-screen') classList add: 'visible'
+! !
+
 Object subclass: #CreakoutWeb
 	instanceVariableNames: ''
 	package: 'CreakoutWeb'!
@@ -31,6 +61,8 @@ start
 		block: [ :millis | model update: millis ];
 		frequency: 1000 / 120;
 		start.
+		
+	model onPhaseChangeDo: [ :phase | CreakoutScreen handlePhase: phase ].
 		
 	window addEventListener: 'resize' block: [
 		canvas width: window innerWidth

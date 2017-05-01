@@ -3,5 +3,5 @@ shoot
 	phase = #aiming
 		ifFalse: [ ^ self ].
 		
-	phase := #ballMoving.
+	self phase: #ballMoving.
 	ball direction: pad aimingDirection

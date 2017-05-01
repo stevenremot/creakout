@@ -11,7 +11,8 @@
 		"phase",
 		"bricks",
 		"currentLevel",
-		"lives" ],
+		"lives",
+		"phaseChangeBlock" ],
 	"name" : "CreakoutModel",
 	"pools" : [
 		 ],

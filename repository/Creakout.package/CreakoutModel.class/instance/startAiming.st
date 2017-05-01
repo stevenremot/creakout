@@ -1,4 +1,4 @@
 game phases
 startAiming
-	phase := #aiming.
+	self phase: #aiming.
 	ball direction: 0@0.

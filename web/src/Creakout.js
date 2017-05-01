@@ -1209,7 +1209,7 @@ messageSends: ["h:s:v:", "atRandom"]
 $globals.CreakoutTargetBrickModel.a$cls);
 
 
-$core.addClass("CreakoutModel", $globals.Object, ["pad", "ball", "phase", "bricks", "currentLevel", "lives"], "Creakout");
+$core.addClass("CreakoutModel", $globals.Object, ["pad", "ball", "phase", "bricks", "currentLevel", "lives", "phaseChangeBlock"], "Creakout");
 //>>excludeStart("ide", pragmas.excludeIdeData);
 $globals.CreakoutModel.comment="I gather all the data of a Creakout game.";
 //>>excludeEnd("ide");
@@ -1729,13 +1729,37 @@ selector: "lose",
 protocol: "game phases",
 fn: function (){
 var self=this,$self=this;
-$self["@phase"]="defeat";
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+$self._phase_("defeat");
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"lose",{},$globals.CreakoutModel)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "lose\x0a\x09self phase: #defeat",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["phase:"]
+}),
+$globals.CreakoutModel);
+
+$core.addMethod(
+$core.method({
+selector: "onPhaseChangeDo:",
+protocol: "game phases",
+fn: function (aBlock){
+var self=this,$self=this;
+$self["@phaseChangeBlock"]=aBlock;
 return self;
 
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
-args: [],
-source: "lose\x0a\x09phase := #defeat",
+args: ["aBlock"],
+source: "onPhaseChangeDo: aBlock\x0a\x09phaseChangeBlock := aBlock",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: []
@@ -1757,6 +1781,55 @@ source: "pad\x0a\x09^pad",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: []
+}),
+$globals.CreakoutModel);
+
+$core.addMethod(
+$core.method({
+selector: "phase",
+protocol: "private-accessing",
+fn: function (){
+var self=this,$self=this;
+return $self["@phase"];
+
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "phase\x0a\x09^ phase",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: []
+}),
+$globals.CreakoutModel);
+
+$core.addMethod(
+$core.method({
+selector: "phase:",
+protocol: "private-accessing",
+fn: function (aPhase){
+var self=this,$self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+var $1,$receiver;
+$self["@phase"]=aPhase;
+$1=$self["@phaseChangeBlock"];
+if(($receiver = $1) == null || $receiver.a$nil){
+$1;
+} else {
+$recv($self["@phaseChangeBlock"])._value_(aPhase);
+}
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"phase:",{aPhase:aPhase},$globals.CreakoutModel)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["aPhase"],
+source: "phase: aPhase\x0a\x09phase := aPhase.\x0a\x09phaseChangeBlock\x0a\x09\x09ifNotNil: [ phaseChangeBlock value: aPhase ]",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["ifNotNil:", "value:"]
 }),
 $globals.CreakoutModel);
 
@@ -1798,7 +1871,7 @@ $1=$recv($self["@phase"]).__eq("aiming");
 if(!$core.assert($1)){
 return self;
 }
-$self["@phase"]="ballMoving";
+$self._phase_("ballMoving");
 $recv($self["@ball"])._direction_($recv($self["@pad"])._aimingDirection());
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -1807,10 +1880,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "shoot\x0a\x09phase = #aiming\x0a\x09\x09ifFalse: [ ^ self ].\x0a\x09\x09\x0a\x09phase := #ballMoving.\x0a\x09ball direction: pad aimingDirection",
+source: "shoot\x0a\x09phase = #aiming\x0a\x09\x09ifFalse: [ ^ self ].\x0a\x09\x09\x0a\x09self phase: #ballMoving.\x0a\x09ball direction: pad aimingDirection",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["ifFalse:", "=", "direction:", "aimingDirection"]
+messageSends: ["ifFalse:", "=", "phase:", "direction:", "aimingDirection"]
 }),
 $globals.CreakoutModel);
 
@@ -1823,7 +1896,7 @@ var self=this,$self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-$self["@phase"]="aiming";
+$self._phase_("aiming");
 $recv($self["@ball"])._direction_((0).__at((0)));
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -1832,10 +1905,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "startAiming\x0a\x09phase := #aiming.\x0a\x09ball direction: 0@0.",
+source: "startAiming\x0a\x09self phase: #aiming.\x0a\x09ball direction: 0@0.",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["direction:", "@"]
+messageSends: ["phase:", "direction:", "@"]
 }),
 $globals.CreakoutModel);
 
@@ -1858,8 +1931,7 @@ $ctx1.sendIdx["levels"]=1;
 $3=$recv($4)._size();
 $1=$recv($2).__gt($3);
 if($core.assert($1)){
-$self["@phase"]="victory";
-$self["@phase"];
+$self._phase_("victory");
 return self;
 }
 $self._perform_($recv($self._levels())._at_($self["@currentLevel"]));
@@ -1871,10 +1943,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "startNewLevel\x0a\x09currentLevel := currentLevel + 1.\x0a\x09currentLevel > self levels size\x0a\x09\x09ifTrue: [ phase := #victory.\x0a\x09\x09\x09^ self ].\x0a\x09self perform: (self levels at: currentLevel).\x0a\x09self startAiming",
+source: "startNewLevel\x0a\x09currentLevel := currentLevel + 1.\x0a\x09currentLevel > self levels size\x0a\x09\x09ifTrue: [ self phase: #victory.\x0a\x09\x09\x09^ self ].\x0a\x09self perform: (self levels at: currentLevel).\x0a\x09self startAiming",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["+", "ifTrue:", ">", "size", "levels", "perform:", "at:", "startAiming"]
+messageSends: ["+", "ifTrue:", ">", "size", "levels", "phase:", "perform:", "at:", "startAiming"]
 }),
 $globals.CreakoutModel);
 
