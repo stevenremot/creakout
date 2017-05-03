@@ -4,13 +4,13 @@ handleKeyUp: anEvent
 	keyValue := anEvent keyValue.
 	rotationDirection := 0.
 	
-	keyValue = 28
+	(self leftKeys includes: keyValue)
 		ifTrue: [  rotationDirection := rotationDirection - 1 ].
 	
-	keyValue = 29
+	(self rightKeys includes: keyValue)
 		ifTrue: [ rotationDirection := rotationDirection + 1 ].
 		
-	keyValue = 30
+	(self shootKeys includes: keyValue)
 		ifTrue: [ model shoot ].
 		
 	model pad rotationDirection: model pad rotationDirection - rotationDirection.
