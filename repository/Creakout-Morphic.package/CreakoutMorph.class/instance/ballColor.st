@@ -1,3 +1,3 @@
 accessing
 ballColor
-	^ Color h: 217 s: 0.7 v: 0.7
+	^ Color h: 100 s: 0.7 v: 0.7

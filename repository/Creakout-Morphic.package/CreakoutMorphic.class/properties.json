@@ -1,14 +1,11 @@
 {
-	"category" : "Creakout-Morphic",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "StevenRemot 4/29/2017 16:56",
-	"instvars" : [
-		 ],
-	"name" : "CreakoutMorphic",
-	"pools" : [
-		 ],
 	"super" : "Object",
-	"type" : "normal" }
+	"category" : "Creakout-Morphic",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CreakoutMorphic",
+	"type" : "normal"
+}
